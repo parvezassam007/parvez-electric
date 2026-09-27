@@ -18,36 +18,67 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  // GALLERY IMAGE CLICK
-  const galleryImages = document.querySelectorAll(".gallery-item img");
+  // GALLERY LIGHTBOX
+
+  const galleryImages =
+    document.querySelectorAll(".gallery-item img");
+
 
   galleryImages.forEach(function (image) {
 
     image.addEventListener("click", function () {
 
-      const lightbox = document.createElement("div");
+      const lightbox =
+        document.createElement("div");
 
       lightbox.className = "gallery-lightbox";
 
+
       lightbox.innerHTML = `
-        <span class="gallery-close">&times;</span>
-        <img src="${this.src}" alt="${this.alt}">
-        <div class="gallery-lightbox-title">${this.alt}</div>
+
+        <button class="gallery-close">
+          &times;
+        </button>
+
+        <img
+          src="${this.src}"
+          alt="${this.alt}"
+        >
+
+        <div class="gallery-lightbox-title">
+          ${this.alt}
+        </div>
+
       `;
+
 
       document.body.appendChild(lightbox);
 
+
       // CLOSE BUTTON
-      lightbox.querySelector(".gallery-close").onclick = function () {
+
+      const closeButton =
+        lightbox.querySelector(".gallery-close");
+
+
+      closeButton.addEventListener("click", function () {
+
         lightbox.remove();
-      };
+
+      });
+
 
       // CLICK OUTSIDE IMAGE
-      lightbox.onclick = function (event) {
+
+      lightbox.addEventListener("click", function (event) {
+
         if (event.target === lightbox) {
+
           lightbox.remove();
+
         }
-      };
+
+      });
 
     });
 
