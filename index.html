@@ -1,189 +1,304 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Parbez Electric Service</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-
-body{
-font-family: Arial;
-margin:0;
-background:#f5f5f5;
-}
-
-header{
-background:#111;
-color:white;
-padding:15px;
-text-align:center;
-}
-
-nav{
-background:#ff6600;
-padding:10px;
-text-align:center;
-}
-
-nav a{
-color:white;
-margin:10px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.hero{
-background:#222;
-color:white;
-padding:60px;
-text-align:center;
-}
-
-.btn{
-background:#ff6600;
-padding:12px 25px;
-color:white;
-text-decoration:none;
-display:inline-block;
-margin-top:10px;
-border-radius:5px;
-}
-
-.section{
-padding:40px;
-text-align:center;
-}
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 5px 10px rgba(0,0,0,0.1);
-}
-
-.contact{
-background:#222;
-color:white;
-padding:40px;
-text-align:center;
-}
-
-footer{
-background:#111;
-color:white;
-padding:15px;
-text-align:center;
-}
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-font-size:22px;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parbez Electric Academy - Learn Electrical Work & Book Services</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        },
+                        electric: {
+                            600: '#2563eb',
+                            500: '#3b82f6',
+                            400: '#60a5fa'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .book-content { font-size: 1rem; line-height: 1.8; }
+        @media print {
+            body * { visibility: hidden; }
+            #printable-book, #printable-book * { visibility: visible; }
+            #printable-book { position: absolute; left: 0; top: 0; width: 100%; }
+        }
+    </style>
 </head>
+<body class="bg-navy-900 text-slate-100 antialiased selection:bg-electric-500 selection:text-white">
 
-<body>
+    <!-- ================= CONFIGURATION & SETTINGS ================= -->
+    <script>
+        // CONFIG: UPDATED WITH YOUR EXACT DETAILS
+        const CONFIG = {
+            whatsappNumber: "919395306384",
+            phoneNumber: "+919395306384",
+            instagramUrl: "https://www.instagram.com/parvezx007?stkn=MTFiMTB6b2F6OWoxdw==",
+            youtubeUrl: "https://youtube.com/@parvezworks?si=ba9DX8fNBCLefat5",
+            facebookUrl: "https://facebook.com/@yourpage", // Facebook link placeholder (update if needed)
+            location: "Hojai, Assam"
+        };
+    </script>
 
-<header>
-<h1>Parbez Electric Service</h1>
-<p>Professional Electrician in Lanka Assam</p>
-</header>
+    <!-- ================= NAVBAR ================= -->
+    <header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur border-b border-navy-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Title -->
+                <a href="#home" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-electric-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-electric-600/30">
+                        <i class="fa-solid fa-bolt-lightning text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-white block">PARBEZ ELECTRIC ACADEMY</span>
+                        <span class="text-xs text-electric-400 font-medium">Professional Training & Services</span>
+                    </div>
+                </a>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium">
+                    <a href="#home" class="hover:text-electric-400 transition">Home</a>
+                    <a href="#book-section" class="hover:text-electric-400 transition flex items-center gap-1.5"><i class="fa-solid fa-book-open text-electric-400"></i> A-Z Book</a>
+                    <a href="#qa-section" class="hover:text-electric-400 transition">100 Q&A</a>
+                    <a href="#practice-section" class="hover:text-electric-400 transition">Practice</a>
+                    <a href="#services" class="hover:text-electric-400 transition">Services</a>
+                    <a href="#gallery" class="hover:text-electric-400 transition">Gallery</a>
+                    <a href="#contact" class="hover:text-electric-400 transition">Contact</a>
+                </nav>
 
-<section class="hero" id="home">
-<h2>Best Electrician Service</h2>
-<p>House Wiring • Switch Repair • Inverter Installation</p>
-<a class="btn" href="tel:9395305384">Call Now</a>
-</section>
+                <!-- CTA & Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <a id="nav-whatsapp-btn" href="#" class="hidden sm:inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2.5 rounded-xl font-medium text-sm transition shadow-lg shadow-green-600/20">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Book on WhatsApp
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-<section class="section" id="services">
-<h2>Our Services</h2>
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-800 border-b border-navy-700 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block py-2 hover:text-electric-400 font-medium">Home</a>
+            <a href="#book-section" class="block py-2 hover:text-electric-400 font-medium">Electrician A to Z Book</a>
+            <a href="#qa-section" class="block py-2 hover:text-electric-400 font-medium">100 Q&A</a>
+            <a href="#practice-section" class="block py-2 hover:text-electric-400 font-medium">Practice Section</a>
+            <a href="#services" class="block py-2 hover:text-electric-400 font-medium">Services</a>
+            <a href="#gallery" class="block py-2 hover:text-electric-400 font-medium">AI Gallery</a>
+            <a href="#contact" class="block py-2 hover:text-electric-400 font-medium">Contact & Booking</a>
+        </div>
+    </header>
 
-<div class="services">
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="relative overflow-hidden py-20 lg:py-32 bg-gradient-to-b from-navy-900 to-navy-800">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-electric-600/20 border border-electric-500/30 text-electric-400 px-4 py-1.5 rounded-full text-sm font-semibold">
+                        <i class="fa-solid fa-graduation-cap"></i> Parbez Electric Academy & Works
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Electrical Work Seekho & <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric-400 to-blue-500">Professional Service</span> Book Karo
+                    </h1>
+                    <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0">
+                        Learn Electrical Work • Work Safely • Book Professional Services. Complete Hindi Notes in English Letters for beginners & expert house wiring services in Hojai, Assam.
+                    </p>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                        <a id="hero-whatsapp-btn" href="#" class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3.5 rounded-xl font-semibold shadow-lg shadow-green-600/30 transition transform hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp par Kaam Book Karein
+                        </a>
+                        <a href="#book-section" class="flex items-center gap-2 bg-electric-600 hover:bg-electric-500 text-white px-6 py-3.5 rounded-xl font-semibold shadow-lg shadow-electric-600/30 transition transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-book-bookmark text-xl"></i> Electrical Book Padhein
+                        </a>
+                        <a id="hero-call-btn" href="#" class="flex items-center gap-2 bg-navy-700 hover:bg-navy-600 text-white px-6 py-3.5 rounded-xl font-semibold border border-navy-600 transition transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-phone text-xl text-electric-400"></i> Call Now
+                        </a>
+                    </div>
+                </div>
 
-<div class="card">
-<i class="fa fa-bolt"></i>
-<h3>House Wiring</h3>
-<p>Complete wiring service for homes.</p>
-</div>
+                <!-- Hero Image Cards Grid -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                    <div class="bg-navy-800 p-5 rounded-2xl border border-navy-700 shadow-xl flex flex-col justify-between transform hover:scale-105 transition">
+                        <div class="w-12 h-12 bg-electric-600/20 text-electric-400 rounded-xl flex items-center justify-center mb-4 text-2xl">
+                            <i class="fa-solid fa-house-chimney-user"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white mb-1">House Wiring</h3>
+                            <p class="text-xs text-slate-400">Safe & standard concealed & surface wiring.</p>
+                        </div>
+                    </div>
+                    <div class="bg-navy-800 p-5 rounded-2xl border border-navy-700 shadow-xl flex flex-col justify-between transform hover:scale-105 transition mt-6">
+                        <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-xl flex items-center justify-center mb-4 text-2xl">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white mb-1">Safety First</h3>
+                            <p class="text-xs text-slate-400">MCB, RCCB & proper Earthing setup.</p>
+                        </div>
+                    </div>
+                    <div class="bg-navy-800 p-5 rounded-2xl border border-navy-700 shadow-xl flex flex-col justify-between transform hover:scale-105 transition">
+                        <div class="w-12 h-12 bg-amber-600/20 text-amber-400 rounded-xl flex items-center justify-center mb-4 text-2xl">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white mb-1">Pro Tools & DB</h3>
+                            <p class="text-xs text-slate-400">Distribution Board & Multimeter mastery.</p>
+                        </div>
+                    </div>
+                    <div class="bg-navy-800 p-5 rounded-2xl border border-navy-700 shadow-xl flex flex-col justify-between transform hover:scale-105 transition mt-6">
+                        <div class="w-12 h-12 bg-purple-600/20 text-purple-400 rounded-xl flex items-center justify-center mb-4 text-2xl">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white mb-1">False & PVC Ceiling</h3>
+                            <p class="text-xs text-slate-400">Specialized ceiling lighting & panels.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<i class="fa fa-lightbulb"></i>
-<h3>Light Repair</h3>
-<p>Fix lights and electrical problems.</p>
-</div>
+    <!-- ================= ELECTRICIAN A TO Z BOOK SECTION ================= -->
+    <section id="book-section" class="py-16 bg-navy-800 border-t border-navy-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Book Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-electric-400 font-semibold text-sm uppercase tracking-wider">Digital Study Guide</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">ELECTRICIAN A TO Z</h2>
+                <p class="text-slate-300 mt-2">Hindi Notes in English Letters | Author: Parbez Works</p>
+                <p class="text-xs text-slate-400 mt-1">Basic Electrical & House Wiring Study Guide for Beginners</p>
+            </div>
 
-<div class="card">
-<i class="fa fa-plug"></i>
-<h3>Switch Board</h3>
-<p>Repair switch board and sockets.</p>
-</div>
+            <!-- Book Control Toolbar -->
+            <div class="bg-navy-900 p-4 rounded-2xl border border-navy-700 mb-8 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-3 w-full sm:w-auto">
+                    <input type="text" id="chapter-search" placeholder="Search chapter..." class="bg-navy-800 border border-navy-700 px-4 py-2 rounded-xl text-sm text-white focus:outline-none focus:border-electric-500 w-full sm:w-64">
+                    <button onclick="searchChapters()" class="bg-electric-600 hover:bg-electric-500 text-white px-4 py-2 rounded-xl text-sm font-medium transition"><i class="fa-solid fa-search"></i></button>
+                </div>
 
-<div class="card">
-<i class="fa fa-car-battery"></i>
-<h3>Inverter Setup</h3>
-<p>Install inverter and battery backup.</p>
-</div>
+                <div class="flex items-center gap-3 flex-wrap">
+                    <!-- Font Size Controls -->
+                    <div class="flex items-center bg-navy-800 border border-navy-700 rounded-xl overflow-hidden">
+                        <button onclick="adjustFontSize(-1)" class="px-3 py-2 text-slate-300 hover:bg-navy-700 transition" title="Decrease Font">A-</button>
+                        <span id="font-size-display" class="px-3 text-xs text-slate-400">100%</span>
+                        <button onclick="adjustFontSize(1)" class="px-3 py-2 text-slate-300 hover:bg-navy-700 transition" title="Increase Font">A+</button>
+                    </div>
+                    <!-- Bookmark Toggle -->
+                    <button id="bookmark-btn" onclick="toggleBookmark()" class="flex items-center gap-2 bg-navy-800 hover:bg-navy-700 border border-navy-700 text-amber-400 px-4 py-2 rounded-xl text-sm font-medium transition">
+                        <i class="fa-regular fa-bookmark" id="bookmark-icon"></i> Bookmark
+                    </button>
+                    <!-- Print / PDF -->
+                    <button onclick="printBook()" class="flex items-center gap-2 bg-navy-800 hover:bg-navy-700 border border-navy-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition">
+                        <i class="fa-solid fa-print"></i> Print / PDF
+                    </button>
+                    <!-- TOC Toggle -->
+                    <button onclick="toggleTOC()" class="flex items-center gap-2 bg-electric-600 hover:bg-electric-500 text-white px-4 py-2 rounded-xl text-sm font-medium transition">
+                        <i class="fa-solid fa-list"></i> Table of Contents
+                    </button>
+                </div>
+            </div>
 
-</div>
-</section>
+            <!-- Main Book Reader Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Sidebar TOC (Desktop) / Modal (Mobile) -->
+                <div id="toc-container" class="hidden lg:block lg:col-span-4 bg-navy-900 rounded-2xl border border-navy-700 p-5 max-h-[650px] overflow-y-auto">
+                    <h3 class="font-bold text-white mb-4 flex items-center justify-between">
+                        <span>Table of Contents (33 Chapters)</span>
+                        <span class="text-xs text-electric-400 font-normal">Roman Hindi</span>
+                    </h3>
+                    <div id="toc-list" class="space-y-1.5 text-sm">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
 
-<section class="section" id="about">
-<h2>About Us</h2>
-<p>
-Parbez Electric Service provides professional electrician services in  
-Lanka, Uddali, Assam.  
-We have more than 10 years experience in electrical work.
-</p>
-</section>
+                <!-- Chapter Content View -->
+                <div class="lg:col-span-8 bg-navy-900 rounded-2xl border border-navy-700 p-6 sm:p-8 shadow-xl" id="printable-book">
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-navy-800 h-2 rounded-full mb-6 overflow-hidden">
+                        <div id="chapter-progress" class="bg-electric-500 h-full transition-all duration-300" style="width: 3%;"></div>
+                    </div>
 
-<section class="contact" id="contact">
+                    <!-- Chapter Meta -->
+                    <div class="flex justify-between items-center text-xs text-electric-400 font-semibold mb-2">
+                        <span id="chapter-number-badge">CHAPTER 1 OF 33</span>
+                        <span id="reading-time">3 min read</span>
+                    </div>
 
-<h2>Contact Us</h2>
+                    <!-- Chapter Title -->
+                    <h2 id="chapter-title" class="text-2xl sm:text-3xl font-bold text-white mb-6 pb-4 border-b border-navy-700"></h2>
 
-<p><i class="fa fa-phone"></i> 9395305384</p>
+                    <!-- Chapter Body Content -->
+                    <div id="chapter-body" class="book-content text-slate-300 space-y-6">
+                        <!-- Populated by JS -->
+                    </div>
 
-<p><i class="fa fa-envelope"></i> alomparbez124@gmail.com</p>
+                    <!-- Navigation Buttons -->
+                    <div class="flex items-center justify-between mt-10 pt-6 border-t border-navy-700">
+                        <button onclick="prevChapter()" class="flex items-center gap-2 bg-navy-800 hover:bg-navy-700 border border-navy-600 text-white px-5 py-2.5 rounded-xl font-medium transition text-sm">
+                            <i class="fa-solid fa-arrow-left"></i> Previous Chapter
+                        </button>
+                        <button onclick="nextChapter()" class="flex items-center gap-2 bg-electric-600 hover:bg-electric-500 text-white px-5 py-2.5 rounded-xl font-medium transition text-sm">
+                            Next Chapter <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p><i class="fa fa-map-marker-alt"></i> Uddali, Lanka, Assam</p>
+    <!-- ================= 100 ELECTRICIAN Q&A SECTION ================= -->
+    <section id="qa-section" class="py-16 bg-navy-900 border-t border-navy-700">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-electric-400 font-semibold text-sm uppercase">Quick Knowledge Hub</span>
+                <h2 class="text-3xl font-extrabold text-white mt-1">100 Electrician Questions & Answers</h2>
+                <p class="text-slate-300 mt-2">Beginner level questions & crisp answers in Roman Hindi for mastery.</p>
+            </div>
 
-<br>
+            <!-- Q&A Search & Accordions -->
+            <div class="mb-6">
+                <input type="text" id="qa-search" onkeyup="filterQA()" placeholder="Search questions (e.g. Voltage, MCB, Earthing)..." class="w-full bg-navy-800 border border-navy-700 px-4 py-3 rounded-xl text-white focus:outline-none focus:border-electric-500">
+            </div>
 
-<a class="btn" href="https://wa.me/919395305384">WhatsApp Chat</a>
+            <div id="qa-container" class="space-y-4 max-h-[600px] overflow-y-auto pr-2">
+                <!-- Populated via JS -->
+            </div>
+        </div>
+    </section>
 
-</section>
+    <!-- ================= PRACTICE SECTION ================= -->
+    <section id="practice-section" class="py-16 bg-navy-800 border-t border-navy-700">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-electric-400 font-semibold text-sm uppercase">Skill Test</span>
+                <h2 class="text-3xl font-extrabold text-white mt-1">Beginner Practice Exercises</h2>
+                <p class="text-slate-300 mt-2">Apne electrical knowledge ko test karein (Safe study mode).</p>
+            </div>
 
-<footer>
-
-<p>© 2024 Parbez Electric Service</p>
-
-</footer>
-
-<a class="whatsapp" href="https://wa.me/919395305384">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-</body>
-  </html>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Exercise 1 -->
+                <div class="bg-navy-900 p-6 rounded-2xl border border-navy-700">
+                    <h3 class="font-bold text-white mb-3 text-lg flex items-center gap-2">
+                        <i class="fa-solid fa-circle-question text-electric-400"></i> Q1. Ghar ki wiring me Phase wire ka standard color kya hota hai?
+                    </h3>
+                    <div class="space-y-2 text-sm">
+                        <label class="flex items-center gap-3 p-3 bg-navy-800 rounded-xl cursor-pointer
