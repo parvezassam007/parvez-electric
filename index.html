@@ -1,457 +1,298 @@
-<script>
-/* =========================================================
-   ELECTRICIAN A TO Z BOOK
-========================================================= */
-
-const chapters = [
-  {
-    title: "CHAPTER 1: ELECTRICITY KYA HAI",
-    time: "3 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">Simple Definition</h3>
-      <p>Electricity (Bijli) ek prakar ki energy hai. Electrical circuits mein electric charge ke movement ki wajah se electrical effects milte hain.</p>
-
-      <h3 class="text-xl font-bold text-white">Easy Explanation</h3>
-      <p>Duniya ki har cheez atoms se bani hai. Conductors, jaise copper wire, electrical charge ko move karne dete hain. Isi electrical movement se circuit mein current flow hota hai.</p>
-
-      <h3 class="text-xl font-bold text-white">Real-Life Example</h3>
-      <p>Jab ghar mein switch ON karte hain, fan chalne ya bulb jalne lagta hai. Appliance ko electrical supply milne se ye kaam karta hai.</p>
-
-      <h3 class="text-xl font-bold text-white">Important Points</h3>
-      <ul class="list-disc pl-6">
-        <li>Electricity energy ka ek useful form hai.</li>
-        <li>Electrical energy ko light, heat aur mechanical energy mein convert kiya ja sakta hai.</li>
-        <li>Conductors ke through electrical energy transfer ki ja sakti hai.</li>
-      </ul>
-
-      <div class="bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl">
-        <strong class="text-amber-400">Safety Warning:</strong>
-        <p class="mt-1">Bare ya unknown wire ko touch na karein. Electrical work se pehle supply isolate karke qualified person ki guidance follow karein.</p>
-      </div>
-
-      <h3 class="text-xl font-bold text-white">Short Revision</h3>
-      <p><b>Electricity:</b> Electrical charge se related energy aur effects ka system.</p>
-    `
-  },
-
-  {
-    title: "CHAPTER 2: VOLTAGE, CURRENT, RESISTANCE AUR POWER",
-    time: "4 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">Simple Definition</h3>
-
-      <ul class="list-disc pl-6">
-        <li><b>Voltage (V):</b> Electrical potential difference jo current ko drive karta hai.</li>
-        <li><b>Current (I):</b> Electric charge ka flow.</li>
-        <li><b>Resistance (R):</b> Current ke flow ka opposition.</li>
-        <li><b>Power (P):</b> Electrical energy use hone ki rate.</li>
-      </ul>
-
-      <h3 class="text-xl font-bold text-white">Easy Explanation</h3>
-      <p>Water pipe example se samjhein: voltage ko pressure ke example se, current ko water flow ke example se aur resistance ko flow ki rukawat ke example se samjha ja sakta hai. Ye sirf concept samajhne ka example hai.</p>
-
-      <h3 class="text-xl font-bold text-white">Units</h3>
-
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm border border-navy-700">
-          <tr class="bg-navy-800">
-            <th class="p-3 text-left">Quantity</th>
-            <th class="p-3 text-left">Symbol</th>
-            <th class="p-3 text-left">Unit</th>
-          </tr>
-          <tr>
-            <td class="p-3">Voltage</td>
-            <td class="p-3">V</td>
-            <td class="p-3">Volt</td>
-          </tr>
-          <tr>
-            <td class="p-3">Current</td>
-            <td class="p-3">I</td>
-            <td class="p-3">Ampere</td>
-          </tr>
-          <tr>
-            <td class="p-3">Resistance</td>
-            <td class="p-3">R</td>
-            <td class="p-3">Ohm</td>
-          </tr>
-          <tr>
-            <td class="p-3">Power</td>
-            <td class="p-3">P</td>
-            <td class="p-3">Watt</td>
-          </tr>
-        </table>
-      </div>
-
-      <h3 class="text-xl font-bold text-white">Short Revision</h3>
-      <p>Voltage = electrical pressure concept | Current = charge flow | Resistance = opposition | Power = rate of energy use.</p>
-    `
-  },
-
-  {
-    title: "CHAPTER 3: OHM'S LAW",
-    time: "4 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">Simple Definition</h3>
-      <p>Ohm's Law voltage, current aur resistance ke beech relationship batata hai.</p>
-
-      <div class="bg-electric-600/10 border border-electric-500/30 rounded-xl p-5 text-center">
-        <p class="text-2xl font-bold text-electric-400">V = I × R</p>
-        <p class="mt-2">Voltage = Current × Resistance</p>
-      </div>
-
-      <h3 class="text-xl font-bold text-white">Formula Se Values</h3>
-      <ul class="list-disc pl-6">
-        <li>V = I × R</li>
-        <li>I = V ÷ R</li>
-        <li>R = V ÷ I</li>
-      </ul>
-
-      <h3 class="text-xl font-bold text-white">Example</h3>
-      <p>Agar V = 12V aur R = 6Ω hai:</p>
-      <p class="font-bold text-electric-400">I = 12 ÷ 6 = 2A</p>
-
-      <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-xl">
-        <strong class="text-red-400">Safety Warning:</strong>
-        <p class="mt-1">Ohm's Law calculation learning ke liye hai. Mains circuit par experiment na karein.</p>
-      </div>
-
-      <h3 class="text-xl font-bold text-white">Short Revision</h3>
-      <p><b>V = I × R</b> electrical calculations ka basic formula hai.</p>
-    `
-  },
-
-  {
-    title: "CHAPTER 4: AC AUR DC",
-    time: "3 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">AC - Alternating Current</h3>
-      <p>AC mein current ki direction aur instantaneous value time ke saath change hoti rehti hai. India mein normal household AC supply 230V, 50Hz nominal system par based hoti hai.</p>
-
-      <h3 class="text-xl font-bold text-white">DC - Direct Current</h3>
-      <p>DC mein current ek direction mein flow karta hai. Battery aur kai electronic power sources DC provide karte hain.</p>
-
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="bg-navy-800 p-5 rounded-xl border border-navy-700">
-          <h4 class="font-bold text-electric-400">AC</h4>
-          <p>Household mains, many fans, refrigerators and other appliances.</p>
-        </div>
-
-        <div class="bg-navy-800 p-5 rounded-xl border border-navy-700">
-          <h4 class="font-bold text-electric-400">DC</h4>
-          <p>Batteries, many electronic circuits and solar systems.</p>
-        </div>
-      </div>
-
-      <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-xl mt-5">
-        <strong class="text-red-400">Safety:</strong>
-        <p class="mt-1">AC aur DC dono dangerous ho sakte hain. Voltage/current ko dekhkar safety risk assume na karein.</p>
-      </div>
-    `
-  },
-
-  {
-    title: "CHAPTER 5: PHASE, NEUTRAL AUR EARTH",
-    time: "4 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">Phase / Line</h3>
-      <p>Phase ya Line conductor supply ka energized conductor hota hai. Isse electrical shock ka serious risk hota hai.</p>
-
-      <h3 class="text-xl font-bold text-white">Neutral</h3>
-      <p>Neutral normal circuit mein current ke return path ka part hota hai. Neutral ko automatically safe samajhna galat hai.</p>
-
-      <h3 class="text-xl font-bold text-white">Earth / Protective Conductor</h3>
-      <p>Earth conductor safety ke liye exposed conductive parts ko protective system se connect karta hai. Fault condition mein protective device ko operate karne mein help karta hai.</p>
-
-      <h3 class="text-xl font-bold text-white">Important</h3>
-      <p>Conductor colours installation standard aur system ke according verify karne chahiye. Sirf colour dekhkar wire ko identify na karein.</p>
-
-      <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-xl">
-        <strong class="text-red-400">Safety Warning:</strong>
-        <p class="mt-1">Tester ya colour par blindly depend na karein. Proper isolation aur approved test procedure follow karein.</p>
-      </div>
-    `
-  },
-
-  {
-    title: "CHAPTER 6: ELECTRICAL SYMBOLS",
-    time: "3 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">Electrical Symbols Kya Hain?</h3>
-      <p>Electrical drawings mein components ko represent karne ke liye standard symbols use hote hain.</p>
-
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm border border-navy-700">
-          <tr class="bg-navy-800">
-            <th class="p-3 text-left">Component</th>
-            <th class="p-3 text-left">Use</th>
-          </tr>
-          <tr><td class="p-3">Switch</td><td class="p-3">Circuit ko control karna</td></tr>
-          <tr><td class="p-3">Lamp</td><td class="p-3">Lighting point</td></tr>
-          <tr><td class="p-3">Socket</td><td class="p-3">Appliance connection</td></tr>
-          <tr><td class="p-3">MCB</td><td class="p-3">Overcurrent protection</td></tr>
-          <tr><td class="p-3">Earth</td><td class="p-3">Protective connection</td></tr>
-        </table>
-      </div>
-
-      <p class="mt-5">Electrical drawings padhte waqt applicable IEC/BIS standard symbols ko refer karna chahiye.</p>
-    `
-  },
-
-  {
-    title: "CHAPTER 7: ELECTRICAL TOOLS KE NAAM AUR USES",
-    time: "4 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">Important Tools</h3>
-
-      <ul class="list-disc pl-6 space-y-2">
-        <li><b>Combination Plier:</b> Wire hold, bend aur cut karne ke liye.</li>
-        <li><b>Insulated Screwdriver:</b> Suitable electrical screws ke liye.</li>
-        <li><b>Wire Stripper:</b> Insulation remove karne ke liye.</li>
-        <li><b>Side Cutter:</b> Wire cutting ke liye.</li>
-        <li><b>Multimeter:</b> Voltage, resistance aur continuity jaise measurements ke liye.</li>
-        <li><b>Voltage Tester:</b> Suitable procedure ke according voltage presence check karne ke liye.</li>
-        <li><b>Measuring Tape:</b> Measurement ke liye.</li>
-      </ul>
-
-      <div class="bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl">
-        <strong class="text-amber-400">Tool Safety:</strong>
-        <p class="mt-1">Damaged, cracked ya wet tools electrical work mein use na karein.</p>
-      </div>
-    `
-  },
-
-  {
-    title: "CHAPTER 8: WIRE AUR CABLE KE TYPES",
-    time: "4 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">Basic Types</h3>
-
-      <ul class="list-disc pl-6 space-y-2">
-        <li><b>Single Core Wire:</b> Ek conductor wala insulated wire.</li>
-        <li><b>Multicore Cable:</b> Ek outer sheath ke andar multiple cores.</li>
-        <li><b>Flexible Cable:</b> Flexible applications aur appliance connections mein use ho sakta hai.</li>
-        <li><b>Armoured Cable:</b> Mechanical protection ki zarurat wali installations mein use hota hai.</li>
-      </ul>
-
-      <h3 class="text-xl font-bold text-white">Important Points</h3>
-      <ul class="list-disc pl-6">
-        <li>Cable ka selection load, installation method, temperature, voltage drop aur applicable standard par depend karta hai.</li>
-        <li>Damaged insulation wale cable ko replace/repair proper method se karein.</li>
-      </ul>
-    `
-  },
-
-  {
-    title: "CHAPTER 9: WIRE SIZE KA BASIC CONCEPT",
-    time: "5 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">Wire Size Kya Hai?</h3>
-      <p>Wire ka cross-sectional area generally square millimetre (mm²) mein diya jata hai.</p>
-
-      <h3 class="text-xl font-bold text-white">Wire Size Kis Par Depend Karta Hai?</h3>
-
-      <ul class="list-disc pl-6 space-y-2">
-        <li>Load current</li>
-        <li>Installation method</li>
-        <li>Cable length</li>
-        <li>Ambient temperature</li>
-        <li>Voltage drop</li>
-        <li>Protection device</li>
-        <li>Applicable electrical standard</li>
-      </ul>
-
-      <div class="bg-blue-500/10 border border-blue-500/30 p-4 rounded-xl">
-        <strong class="text-blue-400">Important:</strong>
-        <p class="mt-1">1.5 mm², 2.5 mm², 4 mm² etc. ko fixed appliance rule na samjhein. Exact cable size load aur installation conditions ke calculation se select hota hai.</p>
-      </div>
-
-      <h3 class="text-xl font-bold text-white">Common Learning Example</h3>
-      <p>Light aur fan circuit ka cable selection power load aur applicable installation standard ke according kiya jata hai. Heavy appliances ke liye alag circuit aur correct protection ki zarurat ho sakti hai.</p>
-    `
-  },
-
-  {
-    title: "CHAPTER 10: MCB KYA HAI",
-    time: "4 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">MCB Full Form</h3>
-      <p><b>Miniature Circuit Breaker</b></p>
-
-      <p>MCB ek protective switching device hai jo specified overcurrent conditions, jaise overload ya short circuit, mein circuit ko disconnect kar sakti hai.</p>
-
-      <h3 class="text-xl font-bold text-white">MCB Ka Purpose</h3>
-      <ul class="list-disc pl-6">
-        <li>Overload protection</li>
-        <li>Short-circuit protection</li>
-        <li>Circuit isolation/switching</li>
-      </ul>
-
-      <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-xl">
-        <strong class="text-red-400">Safety Warning:</strong>
-        <p class="mt-1">MCB baar-baar trip kare toh usko bypass, lock ya oversized device se replace karna dangerous ho sakta hai. Fault ka reason qualified electrician se check karayein.</p>
-      </div>
-    `
-  },
-
-  {
-    title: "CHAPTER 11: RCCB / RCD KYA HAI",
-    time: "4 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">RCCB</h3>
-      <p>RCCB/RCD residual current detect karke circuit disconnect karne ke liye designed protective device hai.</p>
-
-      <h3 class="text-xl font-bold text-white">MCB Aur RCCB Mein Difference</h3>
-
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm border border-navy-700">
-          <tr class="bg-navy-800">
-            <th class="p-3 text-left">MCB</th>
-            <th class="p-3 text-left">RCCB/RCD</th>
-          </tr>
-          <tr>
-            <td class="p-3">Overcurrent protection</td>
-            <td class="p-3">Residual current protection</td>
-          </tr>
-          <tr>
-            <td class="p-3">Overload/short circuit</td>
-            <td class="p-3">Earth leakage type faults</td>
-          </tr>
-        </table>
-      </div>
-
-      <p class="mt-5">RCCB par test button ho sakta hai. Manufacturer ke instructions aur applicable standard ke according test karna chahiye.</p>
-
-      <div class="bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl">
-        <strong class="text-amber-400">Important:</strong>
-        <p class="mt-1">RCCB ko electric shock ke against absolute guarantee na samjhein. Proper earthing, insulation aur safe working practices bhi zaroori hain.</p>
-      </div>
-    `
-  },
-
-  {
-    title: "CHAPTER 12: FUSE KYA HAI",
-    time: "3 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">Simple Definition</h3>
-      <p>Fuse ek overcurrent protective device hai jisme fuse element excessive current par operate karke circuit ko interrupt karta hai.</p>
-
-      <h3 class="text-xl font-bold text-white">Basic Rule</h3>
-      <p>Fuse ko manufacturer ki specified rating aur correct application ke according use kiya jana chahiye.</p>
-
-      <h3 class="text-xl font-bold text-white">Common Mistake</h3>
-      <p>Fuse element ko mota wire, copper wire ya metal piece se replace karna unsafe hai.</p>
-
-      <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-xl">
-        <strong class="text-red-400">Safety Warning:</strong>
-        <p class="mt-1">Fuse ko bypass karna fire aur electric shock risk badha sakta hai.</p>
-      </div>
-    `
-  },
-
-  {
-    title: "CHAPTER 13: MAIN SWITCH AUR DISTRIBUTION BOARD",
-    time: "4 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">Distribution Board (DB)</h3>
-      <p>DB ek enclosure/panel hota hai jahan circuits ko distribute aur protect karne ke liye protective devices aur associated connections arranged hote hain.</p>
-
-      <h3 class="text-xl font-bold text-white">DB Mein Common Items</h3>
-      <ul class="list-disc pl-6">
-        <li>Main isolator / switch</li>
-        <li>MCBs</li>
-        <li>RCCB/RCD where applicable</li>
-        <li>Neutral bar</li>
-        <li>Earth bar</li>
-        <li>Circuit labels</li>
-      </ul>
-
-      <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-xl">
-        <strong class="text-red-400">Safety:</strong>
-        <p class="mt-1">DB ke andar kaam karna trained/qualified person ka kaam hai. Supply isolate aur prove-dead procedure follow karna zaroori hai.</p>
-      </div>
-    `
-  },
-
-  {
-    title: "CHAPTER 14: EARTHING KYA HAI",
-    time: "5 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">Simple Definition</h3>
-      <p>Earthing/grounding electrical safety system ka important part hai. Protective conductor aur earthing arrangement fault current ko safe protective path provide karne mein help karte hain.</p>
-
-      <h3 class="text-xl font-bold text-white">Earthing Ka Purpose</h3>
-      <ul class="list-disc pl-6">
-        <li>Exposed metal parts ko protective system se connect karna.</li>
-        <li>Fault condition mein protective device ko operate karne mein help karna.</li>
-        <li>Electric shock risk ko reduce karna.</li>
-      </ul>
-
-      <h3 class="text-xl font-bold text-white">Important Correction</h3>
-      <p>Earth ko zero-resistance path samajhna correct nahi hai. Earthing system ki actual impedance/resistance installation design aur test se verify hoti hai.</p>
-
-      <div class="bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl">
-        <strong class="text-amber-400">Safety:</strong>
-        <p class="mt-1">Earthing arrangement ko qualified electrician aur applicable standards ke according design/test karna chahiye.</p>
-      </div>
-    `
-  },
-
-  {
-    title: "CHAPTER 15: SHORT CIRCUIT AUR OVERLOAD",
-    time: "4 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">Short Circuit</h3>
-      <p>Jab conductors ke beech unintended low-impedance path ban jata hai, toh bahut high fault current flow ho sakta hai.</p>
-
-      <h3 class="text-xl font-bold text-white">Overload</h3>
-      <p>Jab circuit par uski designed capacity se zyada load current flow karta hai, use overload condition kaha ja sakta hai.</p>
-
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-xl">
-          <h4 class="font-bold text-red-400">Short Circuit</h4>
-          <p class="mt-2">Low-impedance fault → high current → protective device operation.</p>
-        </div>
-
-        <div class="bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl">
-          <h4 class="font-bold text-amber-400">Overload</h4>
-          <p class="mt-2">Excessive load current → heating → protection may operate.</p>
-        </div>
-      </div>
-
-      <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-xl mt-5">
-        <strong class="text-red-400">Safety:</strong>
-        <p class="mt-1">Burning smell, smoke ya abnormal sparking ho toh supply ko safe manner mein isolate karein aur qualified electrician ko bulayein.</p>
-      </div>
-    `
-  },
-
-  {
-    title: "CHAPTER 16: HOUSE WIRING KA BASIC CONCEPT",
-    time: "5 min read",
-    body: `
-      <h3 class="text-xl font-bold text-white">House Wiring</h3>
-      <p>House wiring ka purpose electrical supply ko different circuits aur points tak planned aur protected way mein distribute karna hai.</p>
-
-      <h3 class="text-xl font-bold text-white">Basic Types</h3>
-      <ul class="list-disc pl-6">
-        <li><b>Surface Wiring:</b> Wiring surface par suitable conduit/casing system ke through.</li>
-        <li><b>Concealed Wiring:</b> Suitable conduit/system ke andar wall ya ceiling ke route mein concealed installation.</li>
-      </ul>
-
-      <h3 class="text-xl font-bold text-white">Basic Planning</h3>
-      <ul class="list-disc pl-6">
-        <li>Load identify karein.</li>
-        <li>Circuits plan karein.</li>
-        <li>Correct cable selection karein.</li>
-        <li>Suitable protection provide karein.</li>
-        <li>Earthing/protective conductor provide karein.</li>
-        <li>Labels aur documentation maintain karein.</li>
-      </ul>
-    `
-  },
-
-  {
-    title: "CHAPTER 17: LIGHT CIRCUIT KA CONCEPT",
-    time: "4 min read",
-    body: `
-      <h3 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Parbez Works | False Ceiling • Electrical • Plumbing</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+  <a href="index.html" class="logo">
+    <div class="logo-box">PW</div>
+
+    <div>
+      <strong>PARBEZ WORKS</strong>
+      <small>Ceiling • Electrical • Plumbing</small>
+    </div>
+  </a>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+
+    <span class="badge">📍 Hojai, Assam</span>
+
+    <h1>
+      Professional
+      <span>Ceiling, Electrical</span>
+      & Plumbing Work
+    </h1>
+
+    <p>
+      Modern False Ceiling • Electrical Installation • Plumbing
+      Work for Homes, Shops & Offices.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="https://wa.me/919395305384"
+         target="_blank"
+         class="btn whatsapp">
+        💬 WhatsApp Us
+      </a>
+
+      <a href="services.html" class="btn">
+        Explore Services →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="section">
+
+  <div class="section-heading">
+
+    <span>WHAT WE DO</span>
+
+    <h2>Our Main Services</h2>
+
+    <p>
+      Complete home improvement and installation services.
+    </p>
+
+  </div>
+
+
+  <div class="service-grid">
+
+
+    <div class="service-card">
+
+      <div class="service-icon">🏠</div>
+
+      <h3>False Ceiling</h3>
+
+      <p>
+        Gypsum, PVC, decorative ceiling, LED lighting
+        and modern ceiling designs.
+      </p>
+
+      <a href="services.html#ceiling">
+        View Ceiling Services →
+      </a>
+
+    </div>
+
+
+    <div class="service-card orange">
+
+      <div class="service-icon">⚡</div>
+
+      <h3>Electrical Work</h3>
+
+      <p>
+        House wiring, lights, fans, switches,
+        MCB, DB and electrical repair.
+      </p>
+
+      <a href="services.html#electrical">
+        View Electrical Services →
+      </a>
+
+    </div>
+
+
+    <div class="service-card green">
+
+      <div class="service-icon">🔧</div>
+
+      <h3>Plumbing Work</h3>
+
+      <p>
+        Water pipe, bathroom, kitchen, tap,
+        leakage and drainage work.
+      </p>
+
+      <a href="services.html#plumbing">
+        View Plumbing Services →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FEATURE IMAGE -->
+
+<section class="feature-section">
+
+  <div class="feature-image">
+
+    <img
+      src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
+      alt="Modern false ceiling">
+
+  </div>
+
+
+  <div class="feature-content">
+
+    <span>PARBEZ WORKS</span>
+
+    <h2>Make Your Home Look Better</h2>
+
+    <p>
+      Ceiling design ke saath lighting aur electrical work
+      ko properly plan karke ek clean aur modern finish diya ja sakta hai.
+    </p>
+
+    <ul>
+      <li>✓ Modern False Ceiling</li>
+      <li>✓ LED & Lighting Installation</li>
+      <li>✓ Electrical Work</li>
+      <li>✓ Plumbing Work</li>
+      <li>✓ Repair & Installation</li>
+    </ul>
+
+    <a href="gallery.html" class="btn blue">
+      See Our Gallery
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+  <div>
+    <strong>3+</strong>
+    <span>Main Services</span>
+  </div>
+
+  <div>
+    <strong>100+</strong>
+    <span>Work Projects</span>
+  </div>
+
+  <div>
+    <strong>Hojai</strong>
+    <span>Assam</span>
+  </div>
+
+  <div>
+    <strong>24/7</strong>
+    <span>WhatsApp Contact</span>
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact-section">
+
+  <div>
+
+    <span>GET IN TOUCH</span>
+
+    <h2>Need a Service?</h2>
+
+    <p>
+      False ceiling, electrical ya plumbing work ke liye
+      directly WhatsApp par requirement bheje.
+    </p>
+
+    <a
+      href="https://wa.me/919395305384"
+      target="_blank"
+      class="btn whatsapp">
+      💬 9395305384
+    </a>
+
+  </div>
+
+
+  <div class="social-box">
+
+    <h3>Follow Parbez Works</h3>
+
+    <a
+      href="https://www.instagram.com/parvezx007"
+      target="_blank">
+      📸 Instagram
+    </a>
+
+    <a
+      href="https://youtube.com/@parbezworks"
+      target="_blank">
+      ▶️ YouTube
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div>
+    <strong>PARBEZ WORKS</strong>
+    <p>False Ceiling • Electrical • Plumbing</p>
+  </div>
+
+  <div>
+    📍 Hojai, Assam
+  </div>
+
+  <div>
+    © <span id="year"></span> Parbez Works
+  </div>
+
+</footer>
+
+
+<a
+  class="floating-whatsapp"
+  href="https://wa.me/919395305384"
+  target="_blank">
+  💬
+</a>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
